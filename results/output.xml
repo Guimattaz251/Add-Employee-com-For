@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.12.1 on win32)" generated="2024-01-29T11:36:35.037879" rpa="false" schemaversion="5">
+<suite id="s1" name="Usuarios" source="D:\Robot Framework\Add Employee no ORANGE HRM\suites\usuarios\usuarios.robot">
+<test id="s1-t1" name="TC01: Add 3 employees" line="9">
+<kw name="Access the site to log in" owner="Setup_Teardown" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:36:35.231759" level="INFO">Opening browser 'chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${Setup.Url}</arg>
+<arg>${Setup.Browser}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-01-29T11:36:35.229841" elapsed="26.787818"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-01-29T11:37:02.017659" elapsed="0.122712"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Elements_login.Input_Username}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:02.140371" elapsed="0.587728"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:02.730089" level="INFO">Typing text 'Admin' into text field '//input[@name="username"]'.</msg>
+<arg>${Elements_login.Input_Username}</arg>
+<arg>${Setup.Username}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:02.729581" elapsed="0.113198"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Elements_login.Input_Password}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:02.842779" elapsed="0.027422"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:02.871201" level="INFO">Typing text 'admin123' into text field '//input[@name="password"]'.</msg>
+<arg>${Elements_login.Input_Password}</arg>
+<arg>${Setup.Password}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:02.871201" elapsed="0.102091"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Elements_login.Button_Login}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:02.973292" elapsed="0.019728"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:02.994396" level="INFO">Clicking button '//button[@class="oxd-button oxd-button--medium oxd-button--main orangehrm-login-button"]'.</msg>
+<arg>${Elements_login.Button_Login}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:02.993020" elapsed="0.065024"/>
+</kw>
+<status status="PASS" start="2024-01-29T11:36:35.229841" elapsed="27.828203"/>
+</kw>
+<kw name="Given I access the PIM" owner="home_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Home.Input_Prove}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:03.059074" elapsed="1.980140"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:05.040708" level="INFO">Clicking element '(//a[@class="oxd-main-menu-item"])[2]'.</msg>
+<arg>${Home.PIM}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:05.039214" elapsed="1.695642"/>
+</kw>
+<status status="PASS" start="2024-01-29T11:37:03.059074" elapsed="3.675782"/>
+</kw>
+<kw name="When I click in &quot;add employee&quot;" owner="home_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Home.Add_Employee}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:06.736266" elapsed="0.469855"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:07.207945" level="INFO">Clicking element '(//a[@class="oxd-topbar-body-nav-tab-item"])[2]'.</msg>
+<arg>${Home.Add_Employee}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:07.207414" elapsed="1.620040"/>
+</kw>
+<status status="PASS" start="2024-01-29T11:37:06.734856" elapsed="2.093631"/>
+</kw>
+<kw name="Then I add 3 new employees" owner="new_employee_page" source_name="Then I add ${Quantity} new employees">
+<for flavor="IN RANGE">
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Add.Input_Name}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:08.829447" elapsed="0.678965"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:09.509449" level="INFO">Typing text 'Teste 0' into text field '//input[@name="firstName"]'.</msg>
+<arg>${Add.Input_Name}</arg>
+<arg>${Employee.firstName} ${i}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:09.508412" elapsed="0.092903"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:09.602798" level="INFO">Typing text 'Teste' into text field '//input[@name="middleName"]'.</msg>
+<arg>${Add.Input_MiddleName}</arg>
+<arg>${Employee.middleName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:09.601315" elapsed="0.104919"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:09.707653" level="INFO">Typing text 'Teste' into text field '//input[@name="lastName"]'.</msg>
+<arg>${Add.Input_LastName}</arg>
+<arg>${Employee.lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:09.706234" elapsed="0.093604"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:09.801338" level="INFO">Sending D:\Robot Framework\Add Employee no ORANGE HRM\resources\data\profile.png to browser.</msg>
+<arg>${Add.Button_IMG}</arg>
+<arg>${Employee.profile_photo}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:09.799838" elapsed="0.083804"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Add.Button_Save}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:09.883642" elapsed="0.026632"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:09.911704" level="INFO">Clicking button '//button[@class="oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space"]'.</msg>
+<arg>${Add.Button_Save}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:09.911704" elapsed="0.841366"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Add.Prove_Added}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:10.753070" elapsed="5.183180"/>
+</kw>
+<kw name="When I click in &quot;add employee&quot;" owner="home_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Home.Add_Employee}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:15.936250" elapsed="0.029698"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:15.965948" level="INFO">Clicking element '(//a[@class="oxd-topbar-body-nav-tab-item"])[2]'.</msg>
+<arg>${Home.Add_Employee}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:15.965948" elapsed="0.870004"/>
+</kw>
+<status status="PASS" start="2024-01-29T11:37:15.936250" elapsed="0.899702"/>
+</kw>
+<var name="${i}">0</var>
+<status status="PASS" start="2024-01-29T11:37:08.828487" elapsed="8.007465"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Add.Input_Name}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:16.835952" elapsed="0.524674"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:17.362247" level="INFO">Typing text 'Teste 1' into text field '//input[@name="firstName"]'.</msg>
+<arg>${Add.Input_Name}</arg>
+<arg>${Employee.firstName} ${i}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:17.361198" elapsed="0.096843"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:17.459045" level="INFO">Typing text 'Teste' into text field '//input[@name="middleName"]'.</msg>
+<arg>${Add.Input_MiddleName}</arg>
+<arg>${Employee.middleName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:17.458041" elapsed="0.089755"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:17.548805" level="INFO">Typing text 'Teste' into text field '//input[@name="lastName"]'.</msg>
+<arg>${Add.Input_LastName}</arg>
+<arg>${Employee.lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:17.547796" elapsed="0.091731"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:17.640528" level="INFO">Sending D:\Robot Framework\Add Employee no ORANGE HRM\resources\data\profile.png to browser.</msg>
+<arg>${Add.Button_IMG}</arg>
+<arg>${Employee.profile_photo}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:17.639527" elapsed="0.077711"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Add.Button_Save}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:17.717238" elapsed="0.019876"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:17.737629" level="INFO">Clicking button '//button[@class="oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space"]'.</msg>
+<arg>${Add.Button_Save}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:17.737629" elapsed="0.784580"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Add.Prove_Added}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:18.522209" elapsed="4.204352"/>
+</kw>
+<kw name="When I click in &quot;add employee&quot;" owner="home_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Home.Add_Employee}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:22.726561" elapsed="0.019607"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:22.747169" level="INFO">Clicking element '(//a[@class="oxd-topbar-body-nav-tab-item"])[2]'.</msg>
+<arg>${Home.Add_Employee}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:22.746168" elapsed="0.702255"/>
+</kw>
+<status status="PASS" start="2024-01-29T11:37:22.726561" elapsed="0.721862"/>
+</kw>
+<var name="${i}">1</var>
+<status status="PASS" start="2024-01-29T11:37:16.835952" elapsed="6.612471"/>
+</iter>
+<iter>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Add.Input_Name}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:23.448423" elapsed="1.531489"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:24.980913" level="INFO">Typing text 'Teste 2' into text field '//input[@name="firstName"]'.</msg>
+<arg>${Add.Input_Name}</arg>
+<arg>${Employee.firstName} ${i}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:24.979912" elapsed="0.110268"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:25.091220" level="INFO">Typing text 'Teste' into text field '//input[@name="middleName"]'.</msg>
+<arg>${Add.Input_MiddleName}</arg>
+<arg>${Employee.middleName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:25.090180" elapsed="0.103922"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:25.195103" level="INFO">Typing text 'Teste' into text field '//input[@name="lastName"]'.</msg>
+<arg>${Add.Input_LastName}</arg>
+<arg>${Employee.lastName}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:25.194102" elapsed="0.103117"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:25.299228" level="INFO">Sending D:\Robot Framework\Add Employee no ORANGE HRM\resources\data\profile.png to browser.</msg>
+<arg>${Add.Button_IMG}</arg>
+<arg>${Employee.profile_photo}</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:25.297219" elapsed="0.091307"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Add.Button_Save}</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:25.388526" elapsed="0.021025"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:25.410965" level="INFO">Clicking button '//button[@class="oxd-button oxd-button--medium oxd-button--secondary orangehrm-left-space"]'.</msg>
+<arg>${Add.Button_Save}</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:25.409551" elapsed="0.641209"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Add.Prove_Added}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:26.050760" elapsed="4.290613"/>
+</kw>
+<kw name="When I click in &quot;add employee&quot;" owner="home_page">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${Home.Add_Employee}</arg>
+<arg>10</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-01-29T11:37:30.341373" elapsed="0.018236"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-01-29T11:37:30.360616" level="INFO">Clicking element '(//a[@class="oxd-topbar-body-nav-tab-item"])[2]'.</msg>
+<arg>${Home.Add_Employee}</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-01-29T11:37:30.360616" elapsed="0.681974"/>
+</kw>
+<status status="PASS" start="2024-01-29T11:37:30.341373" elapsed="0.702252"/>
+</kw>
+<var name="${i}">2</var>
+<status status="PASS" start="2024-01-29T11:37:23.448423" elapsed="7.595202"/>
+</iter>
+<var>${i}</var>
+<value>${Quantity}</value>
+<status status="PASS" start="2024-01-29T11:37:08.828487" elapsed="22.215138"/>
+</for>
+<status status="PASS" start="2024-01-29T11:37:08.828487" elapsed="22.215138"/>
+</kw>
+<kw name="Close the browser" owner="Setup_Teardown" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-01-29T11:37:31.043625" elapsed="2.368349"/>
+</kw>
+<status status="PASS" start="2024-01-29T11:37:31.043625" elapsed="2.370338"/>
+</kw>
+<status status="PASS" start="2024-01-29T11:36:35.228829" elapsed="58.186124"/>
+</test>
+<status status="PASS" start="2024-01-29T11:36:35.039890" elapsed="58.381075"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Usuarios">Usuarios</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
